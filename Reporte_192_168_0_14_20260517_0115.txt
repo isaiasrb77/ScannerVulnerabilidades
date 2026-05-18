@@ -1,0 +1,54 @@
+REPORTE TÉCNICO DE CIBERSEGURIDAD
+OBJETIVO: 192.168.0.14
+FECHA: 2026-05-17 01:15:52
+=======================================================
+
+[MÓDULO: CHECK_DB]
+No se detectaron bases de datos expuestas.
+----------------------------------------
+
+[MÓDULO: CHECK_DB_MYSQL]
+Puerto 3306 (MySQL) cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_FTP]
+Puerto 21 (FTP) cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_LINUX]
+Puerto 22 (SSH) cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_LINUX_SERVER]
+--- Iniciando Auditoría Interna en 192.168.0.14 ---
+[!] SSH: PermitRootLogin detectado como 'yes'. (RIESGO ALTO)
+[!] Firewall: UFW detectado como 'inactive'. (RIESGO CRÍTICO)
+[!] Actualizaciones: 14 paquetes de seguridad pendientes (Ubuntu 22.04).
+----------------------------------------
+
+[MÓDULO: CHECK_NMAP_PRO]
+El objetivo no respondió (Host Down).
+----------------------------------------
+
+[MÓDULO: CHECK_RDP]
+Servicio RDP no detectado.
+----------------------------------------
+
+[MÓDULO: CHECK_SMB]
+Puerto 445 (SMB) cerrado o protegido.
+----------------------------------------
+
+[MÓDULO: CHECK_WEB]
+No se detectó un servidor web activo en el puerto 80.
+----------------------------------------
+
+[MÓDULO: WINDOWS_MS17_010]
+Puerto 445 cerrado.
+----------------------------------------
+
+[MÓDULO: ANALISIS_IA]
+🚨 VULNERABILIDADES DETECTADAS POR INTELIGENCIA AUTOMATIZADA:
+ℹ️ SSH CONFIG: PermitRootLogin está activo internamente, pero el puerto 22 se encuentra cerrado en la red externa.
+💀 FIREWALL: El cortafuegos local (UFW) se encuentra INACTIVO. El sistema carece de reglas de filtrado perimetral local.
+📦 SISTEMA: Existen parches y actualizaciones críticas de seguridad del sistema operativo sin instalar.
+----------------------------------------

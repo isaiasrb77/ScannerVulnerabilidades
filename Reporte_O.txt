@@ -1,5 +1,5 @@
 REPORTE TÉCNICO DE CIBERSEGURIDAD
-OBJETIVO: 10.0.0.128
+OBJETIVO: *********
 FECHA: 2026-05-18 12:04:04
 =======================================================
 
@@ -63,7 +63,7 @@ Puerto 445 (SMB) cerrado o protegido.
 ----------------------------------------
 
 [MÓDULO: CHECK_LINUX_SERVER]
---- Iniciando Auditoría Interna en 10.0.0.128 ---
+--- Iniciando Auditoría Interna en ******** ---
 [!] SSH: PermitRootLogin detectado como 'yes'. (RIESGO ALTO)
 [!] Firewall: UFW detectado como 'inactive'. (RIESGO CRÍTICO)
 [!] Actualizaciones: 14 paquetes de seguridad pendientes (Ubuntu 22.04).

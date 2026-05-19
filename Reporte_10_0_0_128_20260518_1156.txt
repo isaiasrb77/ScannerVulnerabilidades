@@ -1,0 +1,83 @@
+REPORTE TÉCNICO DE CIBERSEGURIDAD
+OBJETIVO: 10.0.0.128
+FECHA: 2026-05-18 11:56:52
+=======================================================
+
+[MÓDULO: CHECK_SSL_TLS]
+Version: [32m2.1.5[0m
+OpenSSL 3.5.4 30 Sep 2025
+[0m
+----------------------------------------
+
+[MÓDULO: CHECK_XSS]
+No se detectó XSS reflejado básico.
+----------------------------------------
+
+[MÓDULO: CHECK_LINUX]
+Puerto 22 (SSH) cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_WEB]
+Servidor Web detectado. Código: 403. Software: Apache/2.4.58 (Ubuntu)
+----------------------------------------
+
+[MÓDULO: CHECK_LFI]
+No se detectó exposición de archivos locales (LFI).
+----------------------------------------
+
+[MÓDULO: CHECK_FTP]
+Puerto 21 (FTP) cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_DB]
+No se detectaron bases de datos expuestas.
+----------------------------------------
+
+[MÓDULO: WINDOWS_MS17_010]
+Puerto 445 cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_RDP]
+Servicio RDP no detectado.
+----------------------------------------
+
+[MÓDULO: CHECK_DB_MYSQL]
+Puerto 3306 (MySQL) cerrado.
+----------------------------------------
+
+[MÓDULO: CHECK_SQLI]
+No se detectaron indicios de SQL Injection (basado en errores).
+----------------------------------------
+
+[MÓDULO: CHECK_NMAP_PRO]
+Error al ejecutar módulo: No module named 'nmap'
+----------------------------------------
+
+[MÓDULO: CHECK_SMB]
+Puerto 445 (SMB) cerrado o protegido.
+----------------------------------------
+
+[MÓDULO: CHECK_LINUX_SERVER]
+--- Iniciando Auditoría Interna en 10.0.0.128 ---
+[!] SSH: PermitRootLogin detectado como 'yes'. (RIESGO ALTO)
+[!] Firewall: UFW detectado como 'inactive'. (RIESGO CRÍTICO)
+[!] Actualizaciones: 14 paquetes de seguridad pendientes (Ubuntu 22.04).
+----------------------------------------
+
+[MÓDULO: CHECK_FUZZER]
+No se encontraron directorios sensibles comunes.
+----------------------------------------
+
+[MÓDULO: CHECK_BRUTE_HYDRA]
+[-] No se detectaron credenciales débiles por defecto en los accesos remotos.
+----------------------------------------
+
+[MÓDULO: ANALISIS_IA]
+🚨 VULNERABILIDADES DETECTADAS POR INTELIGENCIA AUTOMATIZADA:
+🚨 SMB: Puerto 445 ABIERTO. Riesgo crítico de Ransomware y explotación remota (MS17-010 / EternalBlue).
+⚠️ FTP: Puerto 21 ABIERTO. Riesgo de interceptación de tráfico y credenciales en texto plano.
+⚠️ CIFRADO OBSOLETO: El servidor acepta protocolos TLS v1.0 o v1.1. Vulnerable a ataques de interceptación (MitM).
+ℹ️ SSH CONFIG: PermitRootLogin está activo internamente, pero el puerto 22 se encuentra cerrado en la red externa.
+💀 FIREWALL: El cortafuegos local (UFW) se encuentra INACTIVO. El sistema carece de reglas de filtrado perimetral local.
+📦 SISTEMA: Existen parches y actualizaciones críticas de seguridad del sistema operativo sin instalar.
+----------------------------------------

